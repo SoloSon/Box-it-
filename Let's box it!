@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The BOX Model</title>
+    <style>
+       #container {
+           width:200px;
+           height: 200px;
+           background-color: blue;
+           position:relative;
+           }
+           
+ #box{
+           width:50px;
+           height:50px;
+           background-color: red;
+           position:absolute;
+        }
+ #box1{
+           width:50px;
+           height:50px;
+           background-color: black;
+           color:white;
+           margin-top:100px;
+           position:absolute;
+        }
+ #box2{
+           width:50px;
+           height:50px;
+           background-color: violet;
+           margin-top:100px;
+           position:absolute;
+        }
+ #box3{
+           width:50px;
+           height:50px;
+           background-color: yellow;
+           
+           position:absolute;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome! To The Box</h1>
+   <!-- <p><button onclick="move()">Button</button></p>--->
+    <div id="container">
+      <div id="box">
+          Red
+      </div>
+      <div id="box1">
+          Black
+      </div>
+      <div id="box2">
+          Violet
+      </div>
+      <div id="box3">
+          Yellow
+      </div>
+   </div>
+   <script>
+    var pos = 0;
+        var box = document.getElementById("box");
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2");
+        var box3 = document.getElementById("box3");
+       var t = setInterval(move, 10);
+        function move(){
+            if(pos>=150){
+               clearInterval(t); //animationTimeline();
+            }
+            else{
+                pos += 1;
+                box.style.left= pos+"px";
+                box1.style.right= pos+"px";
+                box2.style.bottom= pos+"px";
+                box3.style.top= pos+"px";
+            }
+        }
+   </script>
+  </body>
+</html>
